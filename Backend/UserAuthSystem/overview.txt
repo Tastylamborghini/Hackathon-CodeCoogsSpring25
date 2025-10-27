@@ -1,0 +1,98 @@
+# Steganographic Password Encoding System
+
+This document provides an overview of the steganographic password encoding system that securely hides passwords within images.
+
+## Overview
+
+The system uses a two-layered security approach:
+
+1. **Encryption Layer**: Passwords are encrypted using AES (Advanced Encryption Standard) with a user-provided secret key
+2. **Steganography Layer**: The encrypted password is embedded in an image using LSB (Least Significant Bit) steganography
+
+This dual-layer approach ensures that:
+- The password is protected by strong encryption even if steganography is detected
+- The steganographic changes to the image are imperceptible to the human eye
+- Only users with the correct secret key can recover the hidden password
+
+## Technical Implementation
+
+### Dependencies
+
+- **Flask**: Web framework for the application interface
+- **Stegano**: Library for implementing LSB steganography
+- **PyCryptodome**: For AES encryption and decryption
+- **PIL/Pillow**: For image processing
+
+### Security Features
+
+- **AES Encryption**: Industry-standard symmetric encryption algorithm
+- **Random Initialization Vector**: Each encryption uses a unique IV for enhanced security
+- **Key Processing**: Keys are automatically padded or trimmed to proper AES key lengths (16, 24, or 32 bytes)
+- **Base64 Encoding**: For safe storage of binary encrypted data in images
+
+### Workflow
+
+#### Encoding Process:
+1. User provides an image, password, and secret key
+2. Password is encrypted with AES using the secret key
+3. Encrypted data is embedded in the image using LSB steganography
+4. Modified image is returned to the user (visually identical to the original)
+
+#### Decoding Process:
+1. User provides the encoded image and the same secret key
+2. System extracts the encrypted data from the image
+3. System decrypts the data using the provided key
+4. Original password is returned if the key is correct
+
+## Usage Instructions
+
+### Setup
+
+1. Install required packages:
+   ```
+   pip install flask stegano pycryptodome pillow
+   ```
+
+2. Run the application:
+   ```
+   python app.py
+   ```
+
+3. Access the web interface at `http://127.0.0.1:5000/`
+
+### Encoding a Password
+
+1. Click "Choose File" in the Encode section
+2. Select an image (PNG format recommended)
+3. Enter the password you want to hide
+4. Enter a secret key (remember this for later decoding)
+5. Click "Encode Password"
+6. Save the downloaded encoded image
+
+### Decoding a Password
+
+1. Click "Choose File" in the Decode section
+2. Select the previously encoded image
+3. Enter the same secret key used during encoding
+4. Click "Decode Password"
+5. The original password will be displayed
+
+## Security Considerations
+
+- **Key Management**: The secret key must be kept secure and remembered
+- **Image Format**: PNG is recommended as it uses lossless compression
+- **Image Quality**: Higher quality/resolution images can hide more data
+- **Data Size**: There are limits to how much data can be hidden in an image
+- **Transmission**: Always transmit encoded images through secure channels
+
+## Limitations
+
+- The system can only handle passwords that fit within the capacity of the image
+- JPEG and other lossy formats may corrupt the hidden data during compression
+- Processing very large images may be slow in a web browser environment
+
+## Troubleshooting
+
+- If decoding fails, ensure you're using the exact same secret key used for encoding
+- Check that the image hasn't been resized, recompressed, or edited after encoding
+- Verify that the correct image format is being used (PNG recommended)

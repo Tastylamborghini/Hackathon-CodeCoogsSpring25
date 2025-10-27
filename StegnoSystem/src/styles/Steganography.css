@@ -1,0 +1,159 @@
+/* src/styles/Steganography.css */
+.stego-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: calc(100vh - 70px);
+    padding: 20px;
+  }
+  
+  .stego-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    width: 100%;
+    max-width: 700px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .stego-card h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+  
+  .stego-description {
+    text-align: center;
+    color: #666;
+    margin-bottom: 25px;
+  }
+  
+  .stego-tabs {
+    display: flex;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .stego-tab {
+    flex: 1;
+    padding: 12px;
+    text-align: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    color: #666;
+    transition: all 0.3s ease;
+  }
+  
+  .stego-tab:hover {
+    color: #3498db;
+  }
+  
+  .stego-tab.active {
+    color: #3498db;
+    border-bottom: 3px solid #3498db;
+  }
+  
+  .stego-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .file-input {
+    padding: 10px 0;
+  }
+  
+  .key-hint {
+    display: block;
+    margin-top: 5px;
+    color: #888;
+    font-size: 12px;
+  }
+  
+  .image-preview {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .image-preview h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #444;
+  }
+  
+  .image-preview img {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .stego-button {
+    margin-top: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .stego-button:hover {
+    background-color: #2980b9;
+  }
+  
+  .stego-button:disabled {
+    background-color: #a0c5e4;
+    cursor: not-allowed;
+  }
+  
+  .success-message {
+    background-color: #e7f9e7;
+    border-left: 4px solid #27ae60;
+    padding: 12px;
+    margin-bottom: 20px;
+    color: #2c7a4c;
+    border-radius: 4px;
+  }
+  
+  .decoded-result {
+    margin-top: 25px;
+    background-color: #eef7ff;
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+  .decoded-result h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #444;
+  }
+  
+  .password-display {
+    background-color: #f5f5f5;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    word-break: break-all;
+  }
+  
+  @media (max-width: 576px) {
+    .stego-card {
+      padding: 20px;
+    }
+    
+    .stego-tab {
+      padding: 10px 5px;
+      font-size: 14px;
+    }
+  }

@@ -1,0 +1,92 @@
+/* src/styles/Profile.css */
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: calc(100vh - 70px);
+    padding: 20px;
+  }
+  
+  .profile-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .profile-header h2 {
+    color: #2c3e50;
+    font-size: 24px;
+  }
+  
+  .user-avatar {
+    width: 60px;
+    height: 60px;
+    background-color: #3498db;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .profile-info {
+    margin-bottom: 30px;
+  }
+  
+  .profile-info h3 {
+    font-size: 18px;
+    color: #444;
+    margin-bottom: 15px;
+  }
+  
+  .info-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .info-item span:first-child {
+    color: #777;
+    font-weight: 500;
+  }
+  
+  .status-active {
+    color: #27ae60;
+    font-weight: 500;
+  }
+  
+  .profile-message {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 25px;
+  }
+  
+  .logout-button {
+    background-color: #e74c3c;
+  }
+  
+  .logout-button:hover {
+    background-color: #c0392b;
+  }
+  
+  .loading-spinner {
+    text-align: center;
+    padding: 40px 0;
+    color: #666;
+  }
